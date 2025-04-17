@@ -41,6 +41,13 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
+
+                    <form action="{{ route('todos.complete', $todo->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit" class="btn btn-success btn-sm">Complete</button>
+                    </form>
+                    
                 </td>
             </tr>
             @endforeach
